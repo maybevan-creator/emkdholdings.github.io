@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EMKD Holdings | Landscaping & Waste Removal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{
+      --primary:#2e7d32;   /* main green */
+      --primary-dark:#1b5e20;
+      --accent:#81c784;
+      --light:#f1f8e9;
+      --text:#212121;
+      --font:'Segoe UI',Arial,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--font);color:var(--text);line-height:1.6}
+    h1,h2,h3{color:var(--primary-dark)}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    header{
+      position:sticky;top:0;z-index:1000;
+      background:#fff;border-bottom:2px solid var(--accent);
+    }
+    .top-bar{
+      background:var(--primary-dark);color:#fff;
+      text-align:center;padding:6px 0;font-size:14px;
+    }
+    .top-bar a{color:#fff;font-weight:bold}
+    nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:.7rem 1.2rem;
+    }
+    .logo{height:50px}
+    nav ul{list-style:none;display:flex;gap:1.5rem}
+    nav a:hover{color:var(--primary)}
+    section{padding:4rem 1rem;max-width:1000px;margin:auto}
+    .hero{
+      background:url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      color:#fff;text-align:center;position:relative;
+    }
+    .hero::before{
+      content:'';position:absolute;inset:0;background:rgba(0,0,0,.55)
+    }
+    .hero div{position:relative;z-index:2}
+    .hero h1{font-size:2.5rem;margin-bottom:1rem}
+    .btn{
+      display:inline-block;background:var(--primary);color:#fff;
+      padding:.75rem 1.5rem;border-radius:4px;margin-top:1rem;
+      transition:background .3s;
+    }
+    .btn:hover{background:var(--primary-dark)}
+    .services{display:flex;flex-wrap:wrap;gap:2rem;margin-top:2rem}
+    .service{flex:1 1 250px;background:var(--light);padding:1.5rem;border-radius:6px}
+    form{display:grid;gap:1rem;max-width:500px}
+    input,textarea,button{
+      padding:.7rem;font:inherit;border:1px solid #ccc;border-radius:4px
+    }
+    button{background:var(--primary);color:#fff;border:none;cursor:pointer}
+    button:hover{background:var(--primary-dark)}
+    footer{
+      background:var(--primary-dark);color:#fff;text-align:center;
+      padding:1.2rem 0;font-size:.9rem
+    }
+    @media(max-width:600px){
+      nav ul{flex-direction:column;gap:.5rem}
+      .hero h1{font-size:2rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- WhatsApp / Call top bar -->
+<div class="top-bar">
+  Need grass cutting or waste pickup?  
+  <a href="https://wa.me/0684756642?text=Hi%20EMKD,%20I%20need%20a%20quote" target="_blank" rel="noopener">WhatsApp us</a>  
+  or call <a href="tel:0684756642">068-475-6642</a>
+</div>
+
+<header>
+  <nav>
+    <!-- Replace src with your logo file -->
+    <img src="logo.png" alt="EMKD Holdings" class="logo">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div>
+    <h1>EMKD Holdings</h1>
+    <p>Reliable landscaping & waste removal services for homes and businesses.<br>Neat lawns, clean spaces—every time.</p>
+    <a href="#contact" class="btn">Get a free quote</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>
+    EMKD Holdings is a locally owned team serving Cape Town with professional grass cutting, garden clean-ups, and efficient waste removal.  
+    We show up on time, work neatly, and leave your property looking its best.  
+    Fully insured, eco-friendly disposal, competitive rates.
+  </p>
+  <div class="services">
+    <div class="service">
+      <h3>Grass Cutting & Lawn Care</h3>
+      <p>Weekly or one-off mowing, edging, fertilizing and weed control.</p>
+    </div>
+    <div class="service">
+      <h3>Garden Clean-ups</h3>
+      <p>Seasonal pruning, hedge trimming, leaf removal and green-waste hauling.</p>
+    </div>
+    <div class="service">
+      <h3>Waste Removal</h3>
+      <p>Construction debris, household junk, garage clear-outs—sorted and recycled where possible.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact / Quick Quote</h2>
+  <p>Fill in the form below and we’ll reply within 1 hour (or faster on WhatsApp).</p>
+  <form action="https://formsubmit.co/you@emkdholdings.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone / WhatsApp" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" rows="4" placeholder="Tell us what you need (e.g., lawn size, waste type, address)" required></textarea>
+    <!-- Redirect back after submit -->
+    <input type="hidden" name="_next" value="https://emkdholdings.com/thanks.html">
+    <button type="submit">Send Quote Request</button>
+  </form>
+</section>
+
+<footer>
+  © <span id="yr"></span> EMKD Holdings. All rights reserved.  
+  <br>Licensed & Insured • Eco-friendly disposal
+</footer>
+
+<script>
+  // auto year
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  // smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'})
+    })
+  });
+</script>
+</body>
+</html>
